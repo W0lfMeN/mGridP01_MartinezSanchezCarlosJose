@@ -1,0 +1,151 @@
+/* Reseteamos el documento y aplicamos el bo sizing border box */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* El body ocupará toda la web */
+.container{
+    display: grid;
+    grid-template-columns: 10% 30% 30% 30%; /*Indicamos que habrá 4 columnas, una que ocupará el 10% de la pantalla y el resto un 30% cada una*/
+    grid-template-rows: 10% 40% 40% 10%; /*Indicamos que habrá 4 filas, La primera y la ultima ocupan un 20% de la pantalla y el resto un 30% cada una*/
+    row-gap: 1%; /*grid-row-gap está obsoleta*/
+    width: 100%;
+    grid-auto-flow: row; /*Esto hará que los elementos que no entren se posicionen ellos mismos en base a las columnas*/
+}
+
+/*CABECERA*/
+header{
+    border-bottom: 1px solid black;
+    grid-column: 1/5; /*Empieza en la columna 1 y se extiende hasta la 5*/
+    grid-row: 1/2;/*Empieza en la fila 1 y se extiende hasta la 2*/
+    padding: 1%;
+}
+
+header p{
+    text-align: center;
+} 
+
+/* Id del titulo */
+#titulo{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 200%;
+    color: rgb(56, 153, 27);
+}
+/* Id del contenido que hay debajo del titulo */
+#nombre{
+    font-family: 'Dancing Script', cursive;
+    font-size: 175%;
+    color: rgb(15, 194, 170);
+
+}
+/*----*/
+
+
+/*Nav*/
+nav{
+    padding-left: 5%;
+    grid-column: 1/1; /*Empieza en la columna 1 y se extiende hasta la 1*/
+    grid-row: 2/4;/*Empieza en la fila 2 y se extiende hasta la 2*/
+}
+
+nav ul li{
+    font-family: 'Smooch', cursive;
+    list-style: none;
+    color: rgb(56, 153, 27);
+    
+    font-size: 170%;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(56, 153, 27);
+}
+/*----*/
+
+/* #caballo1 del caballo 1 */
+#caballo1{
+    border: 1px solid black;
+    border-radius: 3%;
+    grid-column: 2/4; /*Empieza en la columna 2 y se extiende hasta la 4*/
+    grid-row: 2/3;/*Empieza en la fila 2 y se extiende hasta la 3*/
+    width: 100%;
+    padding: 1%;
+    text-align: center; /*Alinea la imagen y el texto*/
+    justify-self: center; /*Esto hará que el elemento se posicione en el centro, que junto con el width hara que ocupe toda la celda, en este caso de la columna 2 a la 4 */
+}
+#caballo1 img{
+    width: 80%;
+    height: 90%;
+    border-radius: 2%;
+    
+}
+#caballo1 p{
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: rgb(56, 153, 27);
+    margin-top: 1%;
+}
+/*----*/
+
+/*Resto de elementos*/
+article{
+    border: 1px solid black;
+    border-radius: 3%;
+    padding: 3%;
+    justify-self: end; /*Esto hará que los 3 ultimos elementos se pongan al final, oganizandose ellos mismos en cada celda*/
+    width: 90%;
+    margin-right: 2%;/*Para que no esté tan pegado*/ 
+}
+
+article p{
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: rgb(56, 153, 27);
+    margin-top: 1%;
+    text-align: center;
+}
+  
+article img {
+    border-radius: 3%;
+    height: 90%;
+    width: 100%;
+}
+
+
+/* Pie de la página */
+footer {
+    border-top: 1px solid black;
+    grid-column: 1/5;
+    grid-row: 4/5;
+   
+    /*Hacemos un grid para el footer*/
+    display: grid;
+    grid-template-columns: 33% 33% 33%; /*Indicamos que habrá 3 columnas de 33% cada una*/
+    grid-template-rows: 100%; /*Indicamos que habrá 1 fila ocupando su totalidad*/
+    row-gap: 1%; /*grid-row-gap está obsoleta*/
+    width: 100%;
+    /*-------------------------*/
+
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: rgb(56, 153, 27);
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+
+footer address{
+    grid-row: 1/1;
+    grid-column: 1/1;
+    margin-left: 2%;
+}
+#copy{
+    justify-self: center;
+    grid-row: 1/1;
+    grid-column: 2/2;
+    color: rgb(0, 110, 173);
+}
+footer img{
+    justify-self: center;
+    grid-row: 1/1;
+    grid-column: 3/3;
+    width: 10%;
+}
